@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
-import { computerMove, gameWinner } from './rps'
-// import { Form, Radio } from 'semantic-ui-react'
+import { computerMove, gameWinner } from './rps';
 
 class App extends Component {
   state = {
     playerChoice: "",
     computerChoice: "",
     showMessage: false,
-    results: ""
+    results: "",
+    renderGame: false
   }
 
   handleButtonClick(event) {
@@ -20,10 +20,13 @@ class App extends Component {
   render() {
     return (
       <>
-          <h1>ROCK PAPER SCISSORS</h1>
-          <button onClick={event => this.handleButtonClick(event)} value="rock">Rock</button>
-          <button onClick={event => this.handleButtonClick(event)} value="paper">Paper</button>
-          <button onClick={event => this.handleButtonClick(event)} value="scissors">Scissors</button>
+          <h1>ROCK PAPER SCISSORS <i class="blind icon"></i></h1> 
+
+          <button onClick={event => this.handleStartGame(event)}></button>
+
+          <button onClick={event => this.handleButtonClick(event)} value="rock"><i class="huge hand scissors outline icon"></i></button>
+          <button onClick={event => this.handleButtonClick(event)} value="paper"><i class="huge hand rock outline icon"></i></button>
+          <button onClick={event => this.handleButtonClick(event)} value="scissors"><i class="huge hand paper outline icon"></i></button>
           {this.state.showMessaage &&
           <>
           
