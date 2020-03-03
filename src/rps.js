@@ -1,4 +1,3 @@
-import React from 'react';
 import Chance from "chance";
 
 const computerMove = () => {
@@ -9,9 +8,21 @@ const computerMove = () => {
 
 const gameWinner = (player1, player2) => {
     let result
-    switch ([player1, player2]) {
-        case ["rock", "paper"]:
+    switch ([player1, player2].join()) {
+        case ["rock", "paper"].join():
+        case ["paper", "scissors"].join():
+        case ["scissors", "rock" ].join():    
             result = "huset vinner"
+          break
+        case ["rock", "scissors"].join():
+        case ["paper", "rock"].join():
+        case ["scissors", "paper"].join():
+            result = "du vinner"
+          break
+        default:
+            result = "Oavgjort"
+          break    
+
     }
 
     return result

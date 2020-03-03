@@ -7,14 +7,14 @@ class App extends Component {
   state = {
     playerChoice: "",
     computerChoice: "",
-    winnerMessage: false,
+    showMessage: false,
     results: ""
   }
 
   handleButtonClick(event) {
     let playerChoice = event.target.value
     let computerChoice = computerMove()
-    this.setState({ playerChoice: playerChoice, computerChoice: computerChoice, showMessaage: true, results: gameWinner()})
+    this.setState({ playerChoice: playerChoice, computerChoice: computerChoice, showMessaage: true, results: gameWinner(playerChoice, computerChoice)})
   }
 
   render() {
