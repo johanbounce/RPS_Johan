@@ -1,6 +1,6 @@
 import Chance from "chance";
 
-const computerMove = () => {
+const botMove = () => {
     let chance = new Chance()
     let bot = chance.pickone(["rock", "paper", "scissors"])
     return bot
@@ -12,12 +12,12 @@ const gameWinner = (player1, player2) => {
         case ["rock", "paper"].join():
         case ["paper", "scissors"].join():
         case ["scissors", "rock" ].join():    
-            result = "huset vinner"
+            result = "Computer win"
           break
         case ["rock", "scissors"].join():
         case ["paper", "rock"].join():
         case ["scissors", "paper"].join():
-            result = "du vinner"
+            result = "You win"
           break
         default:
             result = "Oavgjort"
@@ -28,5 +28,5 @@ const gameWinner = (player1, player2) => {
     return result
 }
 
-export { computerMove, gameWinner };
+export { botMove, gameWinner };
 
