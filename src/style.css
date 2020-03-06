@@ -65,4 +65,7 @@ button#scissors:hover {
   border-radius: 50%;
 }
 
-
+.rainbow-text {
+  background-image: linear-gradient(to left, violet, indigo,orange, red);   -webkit-background-clip: text;
+  color: transparent;
+}

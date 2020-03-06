@@ -69,7 +69,7 @@ class Game extends Component {
             <>
               <h2 id="you-pick"> {`You picked ${this.state.playerChoice}`}</h2>
               <h2 id="bot-pick">{`Computer picked ${this.state.computerChoice}`}</h2>
-              <h1>{this.state.results}</h1>
+              <h1 class="rainbow-text">{this.state.results}</h1>
             </>
           </div>
         )}
