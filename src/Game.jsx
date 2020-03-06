@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { botMove, gameWinner } from "./rps";
-import Message from "./Message"
+import { Popup } from "semantic-ui-react";
+import "./style.css";
 
 class Game extends Component {
   state = {
@@ -30,36 +31,47 @@ class Game extends Component {
   render() {
     return (
       <>
-        <button
-          id="btn"
-          onClick={event => this.handleButtonClick(event)}
-          value="rock"
-        >
-          ROCK
-        </button>
+        <h1 style={{ fontFamily: "Futura", fontWeight: "lighter" }}>GAME ON</h1>
+        <div style={{ margin: 5 }} class=" ui center aligned container">
+          <Popup
+            trigger={<i class="large question circle outline icon"></i>}
+            content="Choose your pick from options below, and try to outsmart the computer!"
+            inverted
+            size="huge"
+            fontFamily="Futura"
+          ></Popup>
+        </div>
+        <div id="buttoncontainer">
+          <button
+            style={{ fontFamily: "Futura", fontWeight: "lighter" }}
+            id="rock"
+            onClick={event => this.handleButtonClick(event)}
+            value="rock"
+          ></button>
 
-        <button
-          id="btn"
-          onClick={event => this.handleButtonClick(event)}
-          value="paper"
-        >
-          PAPER
-        </button>
+          <button
+            style={{ fontFamily: "Futura", fontWeight: "lighter" }}
+            id="paper"
+            onClick={event => this.handleButtonClick(event)}
+            value="paper"
+          ></button>
 
-        <button
-          id="btn"
-          onClick={event => this.handleButtonClick(event)}
-          value="scissors"
-        >
-          SCISSORS
-        </button>
+          <button
+            style={{ fontFamily: "Futura", fontWeight: "lighter" }}
+            id="scissors"
+            onClick={event => this.handleButtonClick(event)}
+            value="scissors"
+          ></button>
+        </div>
 
         {this.state.showMessage && (
-          <>
-            <h2 id="you-pick"> {`You picked ${this.state.playerChoice}`}</h2>
-            <h2 id="bot-pick">{`Computer picked ${this.state.computerChoice}`}</h2>
-            <h1>{this.state.results}</h1>
-          </>
+          <div id="message">
+            <>
+              <h2 id="you-pick"> {`You picked ${this.state.playerChoice}`}</h2>
+              <h2 id="bot-pick">{`Computer picked ${this.state.computerChoice}`}</h2>
+              <h1>{this.state.results}</h1>
+            </>
+          </div>
         )}
       </>
     );

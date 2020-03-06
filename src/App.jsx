@@ -17,9 +17,15 @@ class App extends Component {
   render() {
     return (
       <>
-        <div class="ui center aligned container">
-          <h1 id="fknheader">ROCK PAPER SCISSORS</h1>
-          <button id="btn enter"style={{marginBottom: 25}} onClick={event => this.handleShowClick(event)}>
+        <div 
+        id="maindiv"
+        class="ui center aligned container">
+          <h1
+          style ={{fontFamily: "Futura", fontWeight: "lighter"}} 
+          id="fknheader">ROCK PAPER SCISSORS</h1>
+          <button
+          style ={{fontFamily: "Futura", fontWeight: "lighter"}} 
+          id="btn enter"style={{marginBottom: 25}} onClick={event => this.handleShowClick(event)}>
             ENTER GAME
           </button>
           <div class="ui center aligned container">
@@ -27,8 +33,10 @@ class App extends Component {
            {this.state.renderGame && 
             <Game />}
             {this.state.renderGame && 
-            <div>
-            <button id="end-game" onClick={event => this.handleHideClick(event)}>END GAME</button>
+            <div style={{margin: 25}}>
+            <button
+            style ={{fontFamily: "Futura", fontWeight: "lighter"}} 
+            id="end-game" onClick={event => this.handleHideClick(event)}>END GAME</button>
             </div>
             }
             

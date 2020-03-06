@@ -10,29 +10,23 @@ describe("user can see game", () => {
     cy.get("button")
       .contains("ENTER GAME")
       .click();
-    cy.get("button")
-      .contains("ROCK")
-      .click();
-    cy.get("#you-pick").should("contain", "You picked rock")  
+    cy.get("#rock").click();
+    cy.get("#you-pick").should("contain", "You picked rock");
   });
 
   it("successfully choose paper as your pick", () => {
     cy.get("button")
       .contains("ENTER GAME")
       .click();
-    cy.get("button")
-      .contains("PAPER")
-      .click();
-    cy.get("#you-pick").should("contain", "You picked paper")  
+      cy.get("#paper").click();
+      cy.get("#you-pick").should("contain", "You picked paper");
   });
 
   it("successfully choose scissors as your pick", () => {
     cy.get("button")
       .contains("ENTER GAME")
       .click();
-    cy.get("button")
-      .contains("SCISSORS")
-      .click();
-    cy.get("#you-pick").should("contain", "You picked scissors")  
+      cy.get("#scissors").click();
+      cy.get("#you-pick").should("contain", "You picked scissors");
   });
 });

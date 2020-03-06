@@ -5,7 +5,7 @@ describe("user can see game", () => {
   });
 
   it("successfully sees the game header", () => {
-    cy.get("#header").should("contain", "ROCK PAPER SCISSOR");
+    cy.get("#fknheader").should("contain", "ROCK PAPER SCISSOR");
   });
 
   it("can successfully enter game", () => {
@@ -16,9 +16,13 @@ describe("user can see game", () => {
   });
 
   it("user can see pick alternatives", () => {
-    cy.get("button").should("contain", "ROCK");
-    cy.get("button").should("contain", "PAPER");
-    cy.get("button").should("contain", "SCISSORS");
+    cy.get("button")
+      .contains("ENTER GAME")
+      .click();
+    cy.get("#buttoncontainer").should("exist");
+    cy.get("#rock").should("exist");
+    cy.get("#paper").should("exist");
+    cy.get("#scissors").should("exist");
   });
 
   it("user can end game when he/she wants", () => {
@@ -29,8 +33,8 @@ describe("user can see game", () => {
     cy.get("button")
       .contains("END GAME")
       .click();
-    cy.get("#rock").should("not.exist");
-    cy.get("#paper").should("not.exist");
-    cy.get("#scissors").should("not.exist");
+    cy.get("#btnrock").should("not.exist");
+    cy.get("#btnpaper").should("not.exist");
+    cy.get("#btnscissors").should("not.exist");
   });
 });
